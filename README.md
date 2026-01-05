@@ -1,4 +1,4 @@
-# MyProject
+#  Online Food Delivery
 It's a online food delivery front end design using HTML, CSS and JS.
 📌 Project Overview
 The Online Food Delivery System is a web-based application designed to allow users to browse restaurants, view menus, and place food orders online.
