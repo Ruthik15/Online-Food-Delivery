@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            background-image: url("https://img.freepik.com/premium-photo/fresh-vegetables-detox-diet-concept-dark-background-with-fresh-vegetables-empty-cooking-pan-symbolizing-concept-eating-healthy-food-weight-loss_1188164-3456.jpg");
+            background-repeat: repeat;
+            background-position: top;
+            background-size: 100%;
+            font-size: large;
+            color: white;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+
+        .ndiv {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            width: 1300px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            margin-top: auto;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .icons svg {
+            transition: transform 0.2s;
+        }
+
+        .icons svg:hover {
+            transform: scale(1.1);
+        }
+
+        .container {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"], 
+        select, 
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid white;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        select {
+            color: white; /* Text color */
+            background-color: rgba(255, 255, 255, 0.1); /* Background color */
+            border: 2px solid white; /* Border color */
+            border-radius: 5px;
+        }
+
+        option {
+            background-color: rgba(0, 0, 0, 0.8); /* Background for options */
+            color: white; /* Text color for options */
+        }
+
+        option[value="5"] { background-color: #28a745; } /* Green for Excellent */
+        option[value="4"] { background-color: #80c742; } /* Light Green for Good */
+        option[value="3"] { background-color: #ffc107; } /* Yellow for Average */
+        option[value="2"] { background-color: #dc3545; } /* Red for Poor */
+        option[value="1"] { background-color: #c82333; } /* Dark Red for Terrible */
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #28a745; /* Success message color */
+        }
+
+        @media (max-width: 600px) {
+            .ndiv {
+                width: 100%;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ndiv">
+        <h1><u>VEGGIES FORK</u></h1>
+        <h3>Your belly knows best</h3>
+        <div class="icons">
+            <a href="Home.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-house-fill" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                </svg>
+            </a>
+            <a href="Home.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
+                    <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1"/>
+                </svg>
+            </a>
+            <a href="FoodMenu.html">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 64 64" aria-hidden="true" role="img" class="iconify iconify--emojione-monotone" preserveAspectRatio="xMidYMid meet">
+                    <g fill-rule="evenodd">
+                        <path d="M61.821 11.045c.703-1.309-.891-.912-.891-.912s-10.627 10.201-12.104 8.951S59.231 8.057 57.825 6.23c-1.301-1.703-11.74 10.455-12.994 8.97c-1.242-1.482 8.939-12.123 8.939-12.123s.387-1.602-.912-.9C36.851 10.785 34.812 18.81 34.812 18.81s-.551 1.563.645 2.771c.117.105-29.204 29.26-33.129 33.196c-1.91 1.908 5.098 8.801 6.996 6.893c3.926-3.936 33.024-33.303 33.129-33.194c1.207 1.205 2.766.652 2.766.652s8.012-2.045 16.602-18.083" fill="#FFFFFF"></path>
+                        <path d="M32.028 40.507c7.803 7.82 20.958 20.999 20.958 20.999s5.742-1.879 6.551-6.729L38.662 33.861a5104.35 5104.35 0 0 0-6.634 6.646" fill="#FFFFFF"></path>
+                        <path d="M21.76 33.729a5059.26 5059.26 0 0 0 8.387-8.4L7.459 2.598s-.41-.43-1.313.477C4.353 4.862.884 16.248 15.591 30.977c2.331 2.336 4.359 2.66 6.169 2.752" fill="#FFFFFF"></path>
+                    </g>
+                </svg>
+            </a>
+        </div>
+
+        <div class="container">
+            <h1>About Us</h1>
+            <p>
+                Welcome to Veggies Fork, where we believe that great meals should be just a click away! Founded in 2019, 
+                our mission is to bring delicious food directly to your doorstep, providing a seamless experience for 
+                food lovers everywhere. With a diverse selection of local restaurants, we aim to cater to every palate, 
+                whether you're craving a comforting pizza, fresh sushi, or a hearty vegan meal. Our team is passionate
+                    about connecting you with the best culinary offerings in your area, ensuring you never have to compromise
+                    on quality or taste.
+                    </p>
+                    <p>
+                At Veggies Fork, we understand that convenience is key in today’s fast-paced world. That’s why we’ve designed 
+                our platform to be user-friendly, allowing you to browse menus, place orders, and track deliveries effortlessly.
+                Our intuitive app and website make it easy to explore various cuisines, filter by dietary preferences, and discover
+                new favorites. Plus, with our reliable delivery network, you can rest assured that your food will arrive hot 
+                and fresh, ready to be enjoyed.
+                </p>
+                <p>
+                We take pride in partnering with local restaurants, helping to support our community and promote small businesses.
+                Each restaurant on our platform has been carefully selected for its quality, service, and commitment to excellence. 
+                By choosing to order from [Your Food Delivery Website Name], you're not just getting a meal; you're also 
+                supporting the culinary talent in your area. We are dedicated to showcasing the unique flavors and dishes 
+                that make our local dining scene special.
+                </p>
+                <p>
+
+                Customer satisfaction is at the heart of everything we do. 
+                Our team is always here to assist you with any inquiries or concerns, 
+                ensuring that your experience is nothing short of exceptional. 
+                We value your feedback and continuously strive to improve our services based on your suggestions. 
+                Whether you’re a first-time user or a loyal customer, we want you to feel valued and appreciated every time you order.
+
+                Join us on this delicious journey! With Veggies Fork, exploring new tastes and enjoying your favorite meals 
+                has never been easier. We’re excited to serve you and make every meal a memorable one. Thank you for choosing
+                us as your go-to food delivery service—let's make your dining experience extraordinary!
+                </p>
+        </div>
+    </div>
+
+</body>
+</html>

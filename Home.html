@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    
+    <style>
+        body{
+            background-image: url("https://img.freepik.com/premium-photo/group-south-indian-dishes-served-banana-leaves-with-colorful-chutneys-dark-black-background-generative-ai_74760-1960.jpg");
+            background-repeat: no-repeat;
+            background-size: 75%;
+            background-position: center;
+            font-size: 20px;
+            font-weight: 200;
+            background-color:black;
+            color:white;
+        }
+        
+        .ndiv{
+            background-color:black;
+            color:white;
+            opacity: 0.7;
+            text-align:center;
+            font-size: larger;
+            margin-top:150px;
+            margin-left:auto;
+            margin-right:auto;
+            border:5px solid white;
+            border-radius: 10px;
+            padding: 50px;
+            width: 400px;
+            height: 350px;
+            max-width: 600px;
+            box-shadow: 0 0 100px white;
+
+        }
+        
+        .overlay {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: rgb(0,0,0);
+                background-color: rgba(0,0,0, 0.9);
+                overflow-x: hidden;
+                transition: 0.5s;
+            }
+
+        .overlay-content {
+                position: relative;
+                top: 25%;
+                width: 100%;
+                text-align: center;
+                margin-top: 30px;
+            }
+
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay a:hover, .overlay a:focus {
+              color: #f1f1f1;
+        }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .overlay a {font-size: 20px}
+        
+            .overlay .closebtn {
+                        font-size: 40px;
+                        top: 15px;
+                        right: 35px;
+                    }
+        }
+    span{
+        border:2px solid white;
+        padding:10px;
+        border-radius:11px;
+    }
+       
+    </style>
+
+    <script>
+            
+        function openNav() {
+          document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+          document.getElementById("myNav").style.width = "0%";
+        }
+        
+    </script>
+
+    <body>
+            
+        
+        <div class="ndiv">
+            <h1 font-size="60px" font-align="center" font-family="Gill Sans", "Gill Sans MT","Calibri", "Trebuchet MS", sans-serif> 
+                <u> VEGGIES FORK </u> 
+            </h1>
+            <h3>Your belly knows best</h3><br><br>  
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+            
+        </div>
+        
+        <div id="myNav" class="overlay">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="overlay-content">
+                <a href="Home.html" >Home</a> 
+                <a href="SignIn.html">SignIn</a> 
+                <a href="SignUp.html">SignUp </a>
+                <a href="FoodMenu.html">Food Menu</a> 
+                <a href="AboutUs.html">About Us </a>
+                <a href="Pripolicy.html">Privacy Policy </a>
+          </div>
+        </div>
+
+        
+
+    </body>
+</html>

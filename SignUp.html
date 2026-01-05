@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            background-image: url("https://img.freepik.com/premium-photo/fresh-vegetables-detox-diet-concept-dark-background-with-fresh-vegetables-empty-cooking-pan-symbolizing-concept-eating-healthy-food-weight-loss_1188164-3456.jpg");
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: cover;
+            font-size: 20px;
+            font-weight: 200;
+            text-align: center;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .ndiv {
+            background-color: black;
+            color: white;
+            opacity: 0.8;
+            text-align: center;
+            font-size: larger;
+            margin: 50px auto 0; 
+            border: 5px solid white;
+            border-radius: 10px; 
+            padding: 30px; 
+            width: 550px;
+            max-width: 600px;
+            box-shadow: 0 0 100px rgba(255, 255, 255, 0.5);
+        }
+
+        .icons {
+            display: flex;
+            flex-direction: row;
+            gap: 30px; 
+            color: white;
+            margin: 20px 0;
+            justify-content: space-around;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        h1, h3 {
+            margin: 10px 0; 
+        }
+
+        .signup {
+           background-color: #28a745;
+            color: white;
+            padding: 15px 70px;
+            font-size: 22px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+        }
+        .signup:hover {
+            background-color: #218838;
+        }
+
+        .inputcolor {
+            background-color: black;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 11px;
+            border: 2px solid white;
+            width: calc(100% - 30px);
+            margin: 10px 0;
+        }
+
+        input::placeholder {
+            color: white; 
+            opacity: 0.7; 
+        }
+    </style>
+</head>
+<body>
+    <div class="ndiv">
+        <h1><u>VEGGIES FORK</u></h1>
+        <h3>Your belly knows best</h3>  
+        <div class="icons">
+            <a href="Home.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
+                    <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1"/>
+                </svg>
+            </a>  
+            <a href="Home.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-house-fill" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                </svg>
+            </a>
+            <a href="FoodMenu.html" class="icons">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 64 64" aria-hidden="true" role="img" class="iconify iconify--emojione-monotone" preserveAspectRatio="xMidYMid meet">
+                    <g fill-rule="evenodd">
+                        <path d="M61.821 11.045c.703-1.309-.891-.912-.891-.912s-10.627 10.201-12.104 8.951S59.231 8.057 57.825 6.23c-1.301-1.703-11.74 10.455-12.994 8.97c-1.242-1.482 8.939-12.123 8.939-12.123s.387-1.602-.912-.9C36.851 10.785 34.812 18.81 34.812 18.81s-.551 1.563.645 2.771c.117.105-29.204 29.26-33.129 33.196c-1.91 1.908 5.098 8.801 6.996 6.893c3.926-3.936 33.024-33.303 33.129-33.194c1.207 1.205 2.766.652 2.766.652s8.012-2.045 16.602-18.083" fill="#FFFFFF"></path>
+                        <path d="M32.028 40.507c7.803 7.82 20.958 20.999 20.958 20.999s5.742-1.879 6.551-6.729L38.662 33.861a5104.35 5104.35 0 0 0-6.634 6.646" fill="#FFFFFF"></path>
+                        <path d="M21.76 33.729a5059.26 5059.26 0 0 0 8.387-8.4L7.459 2.598s-.41-.43-1.313.477C4.353 4.862.884 16.248 15.591 30.977c2.331 2.336 4.359 2.66 6.169 2.752" fill="#FFFFFF"></path>
+                    </g>
+                </svg>
+            </a>
+            <a href="Order.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                    <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1"/>
+                </svg>
+            </a>
+        </div>
+        <div class="container">
+            <h2>Sign Up</h2>   
+            <form onsubmit="return validateForm()">
+                <input type="text" class="inputcolor" placeholder="Full Name" id="fullName" required><br>
+                <input type="email" class="inputcolor" placeholder="Email address" id="email" required><br>
+                <input type="tel" class="inputcolor" placeholder="Mobile number" id="mobile" required pattern="[0-9]{10}"><br>
+                <input type="password" class="inputcolor" placeholder="Create Password" id="password" required><br>
+                <input type="password" class="inputcolor" placeholder="Retype Password" id="confirmPassword" required><br><br>
+                <input type="submit" class="signup" value="Sign Up"><br>
+            </form>  
+        </div>      
+    </div>
+
+    <script>
+        function validateForm() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+
+            // Assuming validation passed
+            alert("Successfully signed up!");
+            location.href = "SignIn.html";
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>

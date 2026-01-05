@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Mode Selection</title>
+    <style>
+        body {
+            background-image: url("https://img.freepik.com/premium-photo/fresh-vegetables-detox-diet-concept-dark-background-with-fresh-vegetables-empty-cooking-pan-symbolizing-concept-eating-healthy-food-weight-loss_1188164-3456.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            font-size: 20px;
+            font-weight: 200;
+            text-align: center;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .ndiv {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 5px solid white;
+            border-radius: 10px;
+            padding: 40px;
+            margin: 70px auto;
+            max-width: 600px;
+            box-shadow: 0 0 100px rgba(255, 255, 255, 0.5);
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .icons {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+        .header h3 {
+            margin: 5px 0 20px;
+        }
+        
+        
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: flex; /* Change to flex to align items */
+            align-items: center; /* Center vertically */
+            margin: 15px 10px; /* Adjust margin */
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            opacity: 0; /* Hide the default radio button */
+            position: absolute; /* Remove from flow */
+        }
+
+        input[type="radio"] + span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid white;
+            border-radius: 50%;
+            background: transparent;
+            transition: background 0.3s;
+            position: relative;
+            top: 5px; /* Center vertically with text */
+        }
+
+        input[type="radio"]:checked + span {
+            background: #28a745; /* Change background when selected */
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        hr {
+            border: 1px solid white;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="ndiv">
+        <h1><u>VEGGIES FORK</u></h1>
+        <h3>Your belly knows best</h3>
+        <div class="icons">
+            <a href="Home.html" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-house-fill" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                </svg>
+            </a>
+            <a href="Order.html" aria-label="Back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
+                    <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1"/>
+                </svg>
+            </a>
+        </div> 
+        
+        <div class="container">
+            <h2>Select Payment Method</h2><br>
+            <form id="paymentForm">
+                <label><input type="radio" name="payment" value="credit" required> <span></span>  Credit Card</label><br>
+                <label><input type="radio" name="payment" value="paypal"> <span></span>  PayPal</label><br>
+                <label><input type="radio" name="payment" value="bank-transfer"> <span></span>  Bank Transfer</label><br>
+                <button type="submit">Proceed to Payment</button>
+            </form>
+            <div id="message"></div>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const selectedPayment = document.querySelector('input[name="payment"]:checked');
+            
+            if (selectedPayment) {
+                const paymentValue = selectedPayment.value;
+                document.getElementById('message').innerText = `You have selected ${paymentValue}.`;
+                
+                // Redirect based on selected payment method
+                if (paymentValue === 'credit') {
+                    window.location.href = "Credit.html";
+                } else if (paymentValue === 'paypal') {
+                    window.location.href = "PayPal.html";
+                } else if (paymentValue === 'bank-transfer') {
+                    window.location.href = "Bank.html";
+                }
+            } else {
+                document.getElementById('message').innerText = 'Please select a payment method.';
+            }
+        });
+    </script>
+</body>
+</html>

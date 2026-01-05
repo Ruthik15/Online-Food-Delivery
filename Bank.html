@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Transfer</title>
+    <style>
+        body {
+            background-image: url("https://img.freepik.com/premium-photo/fresh-vegetables-detox-diet-concept-dark-background-with-fresh-vegetables-empty-cooking-pan-symbolizing-concept-eating-healthy-food-weight-loss_1188164-3456.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .ndiv {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 5px solid white;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px auto;
+            box-shadow: 0 0 100px rgba(255, 255, 255, 0.5);
+            width: 1200px;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: auto;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .icons {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: calc(48% - 10px); /* Two columns */
+            padding: 10px;
+            border: 1px solid white; /* Border color */
+            border-radius: 4px;
+            color: white; /* Text color */
+            background-color: transparent; /* Transparent background */
+            opacity: 0.9; /* Adjust opacity for visibility */
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .section-title {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            input[type="text"],
+            input[type="tel"],
+            input[type="email"],
+            input[type="number"],
+            select {
+                width: 100%; /* Stack inputs on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ndiv">
+      
+        <center><h1><u>VEGGIES FORK</u></h1>
+        <h3>Your belly knows best</h3></center>
+        <div class="icons">
+            <a href="Home.html" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-house-fill" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                </svg>
+            </a>
+            <a href="Payment.html" aria-label="Back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
+                    <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1"/>
+                </svg>
+            </a>
+        </div> 
+        
+        <div class="container">
+            <center><h1>Bank Transfer</h1></center>  <br><br>
+            
+            <form id="bankTransferForm" onsubmit="return validateForm()">
+                <center><h3><div class="section-title">Sender's Information</div></h3></center>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="senderName">Name:</label>
+                        <input type="text" id="senderName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senderEmail">Email Address:</label>
+                        <input type="email" id="senderEmail" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="senderAddress">Address:</label>
+                        <input type="text" id="senderAddress" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senderPhone">Phone Number:</label>
+                        <input type="tel" id="senderPhone" required pattern="^\d{10}$" title="Please enter a valid 10-digit phone number.">
+                    </div>
+                </div><br><br>
+
+                <center><h3><div class="section-title">Recipient's Information</div></h3></center>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="recipientName">Name:</label>
+                        <input type="text" id="recipientName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="accountNumber">Bank Account Number:</label>
+                        <input type="text" id="accountNumber" required pattern="^[A-Z0-9]+$" title="Please enter a valid account number (alphanumeric).">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="routingNumber">Routing Number:</label>
+                        <input type="text" id="routingNumber" required pattern="^\d{9}$|^([A-Z]{6}[0-9]{8})$" title="Please enter a valid ABA (9 digits) or SWIFT code.">
+                    </div>
+                    <div class="form-group">
+                        <label for="bankName">Bank Name:</label>
+                        <input type="text" id="bankName" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group" style="flex: 1 0 100%;">
+                        <label for="bankAddress">Bank Address:</label>
+                        <input type="text" id="bankAddress" required>
+                    </div>
+                </div><br><br>
+
+                <center><h3><div class="section-title">Transfer Details</div></h3></center>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="transferAmount">Transfer Amount:</label>
+                        <input type="number" id="transferAmount" required min="1" step="any" title="Please enter a valid transfer amount.">
+                    </div>
+                    <div class="form-group">
+                        <label for="currency">Currency</label>
+                        <select id="currency" required>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="AUD">AUD</option>
+                            <option value="CAD">CAD</option>
+                        </select>
+                    </div>
+                </div><br><br>
+
+                <button type="submit">Pay</button>
+            </form>
+        </div>
+    </div>    
+
+    <script>
+        function validateForm() {
+            const senderName = document.getElementById('senderName').value;
+            const senderEmail = document.getElementById('senderEmail').value;
+            const transferAmount = document.getElementById('transferAmount').value;
+
+            if (!senderName || !senderEmail || !transferAmount) {
+                alert("Please fill in all required fields.");
+                return false;
+            }
+
+            // Redirect to a specific page upon successful validation
+            alert("Transfer details submitted successfully!");
+            window.location.href = "Customer.html"; // Change to your target page
+            return false; // Prevent the default form submission
+        }
+    </script>
+
+</body>
+</html>

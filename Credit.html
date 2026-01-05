@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Payment</title>
+    <style>
+        body {
+            background-image: url("https://img.freepik.com/premium-photo/fresh-vegetables-detox-diet-concept-dark-background-with-fresh-vegetables-empty-cooking-pan-symbolizing-concept-eating-healthy-food-weight-loss_1188164-3456.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ndiv {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 40px;
+            margin: 70px auto;
+            max-width: 600px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            text-align: center;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 2px; /* Reduced margin */
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .card-type {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .card-type input[type="radio"] {
+            display: none;
+        }
+
+        .card-type label {
+            flex: 1;
+            margin-right: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .card-type input[type="radio"]:checked + label {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="ndiv">
+        <h1><u>VEGGIES FORK</u></h1>
+        <h3>Your belly knows best</h3>
+        <div class="icons">
+            <a href="Home.html" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-house-fill" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                </svg>
+            </a>
+            <a href="Payment.html" aria-label="Back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
+                    <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1"/>
+                </svg>
+            </a>
+        </div> 
+
+        <div class="container">
+            <h1 class="full-width">Credit Card Payment</h1>
+            <label for="cardNumber" class="full-width">Card Number (16 digits)</label>
+            <input type="text" id="cardNumber" maxlength="16" required pattern="\d{16}" title="Please enter a valid 16-digit card number." class="full-width">
+            
+            <label for="expirationDate">Expiration Date (MM/YY)</label>
+            <input type="text" id="expirationDate" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/\d{2}" title="Format: MM/YY">
+            
+            <label for="cvv">CVV</label>
+            <input type="number" id="cvv" maxlength="3" required pattern="\d{3}" title="Please enter a valid 3-digit CVV.">
+            
+            <label for="cardholderName" class="full-width">Cardholder's Name</label>
+            <input type="text" id="cardholderName" required class="full-width">
+
+            <h2 class="full-width">Billing Address</h2>
+            <label for="address">Address</label>
+            <input type="text" id="address" required>
+            
+            <label for="city">City</label>
+            <input type="text" id="city" required>
+            
+            <label for="state">State</label>
+            <input type="text" id="state" required>
+            
+            <label for="postalCode">Postal Code</label>
+            <input type="text" id="postalCode" required pattern="\d{5}" title="Please enter a valid 5-digit postal code.">
+            
+            <label for="country">Country</label>
+            <input type="text" id="country" required>
+            
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel" id="phoneNumber" required pattern="^\d{10}$" title="Please enter a valid 10-digit phone number.">
+
+            <h2 class="full-width">Select Card Type</h2>
+            <div class="card-type full-width">
+                <input type="radio" id="visa" name="cardType" value="Visa" required>
+                <label for="visa">Visa</label>
+                
+                <input type="radio" id="mastercard" name="cardType" value="Mastercard">
+                <label for="mastercard">Mastercard</label>
+                
+                <input type="radio" id="amex" name="cardType" value="American Express">
+                <label for="amex">Amex</label>
+                
+                <input type="radio" id="discover" name="cardType" value="Discover">
+                <label for="discover">Discover</label>
+            </div>
+
+            <button type="submit" class="full-width">Pay</button>
+        </div>
+    </div>    
+
+    <script>
+        function validateForm() {
+            const cardNumber = document.getElementById('cardNumber').value;
+            const expirationDate = document.getElementById('expirationDate').value;
+            const cvv = document.getElementById('cvv').value;
+
+            // Basic validation for card number and expiration
+            if (!/^\d{16}$/.test(cardNumber)) {
+                alert('Please enter a valid 16-digit card number.');
+                return false;
+            }
+
+            const [month, year] = expirationDate.split('/');
+            const expiryDate = new Date();
+            expiryDate.setFullYear(2000 + parseInt(year), parseInt(month) - 1);
+            if (expiryDate < new Date()) {
+                alert('Expiration date must be in the future.');
+                return false;
+            }
+
+            if (!/^\d{3}$/.test(cvv)) {
+                alert('Please enter a valid 3-digit CVV.');
+                return false;
+            }
+
+            // If the form is valid, redirect to the next page
+            window.location.href = "Customer.html";
+            return false; // Prevent default form submission
+        }
+    </script>
+</body>
+</html>

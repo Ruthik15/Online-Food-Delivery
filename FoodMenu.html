@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Food Menu</title>
+    </head>
+    <style>
+        body{
+            background-image: url("https://img.freepik.com/premium-photo/group-south-indian-dishes-served-banana-leaves-with-colorful-chutneys-dark-black-background-generative-ai_74760-1960.jpg");
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: 60%;
+            font-size: 20px;
+            font-weight: 200;
+            text-align:center;
+            background-color:black;
+            color:white;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .ndiv{
+            background-color:black;
+            color:white;
+            opacity: 0.7;
+            text-align:center;
+            font-size: larger;
+            margin-top:90px;
+            margin-left:auto;
+            margin-right:auto;
+            border:5px solid white;
+            border-radius: 10px;
+            padding: 50px;
+            width: 450px;
+            height: 300px;
+            max-width: 600px;
+            box-shadow: 0 0 100px rgba(255, 255, 255, 0.5);
+
+        }
+
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 90px;
+            padding: 10px;
+            margin: 100px; 
+            
+        }
+        .grid-item {
+            background-color: black;
+            color: white;
+            border-radius: 80px;
+            border: 1px solid white;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            max-width: 600px;
+            box-shadow: 0 0 90px rgba(255, 255, 255, 0.5);
+        }
+        .grid-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 90px rgba(0, 0, 0, 0.5);
+        }
+
+        .grid-item img {
+            border-radius: 10px;
+            transition: transform 0.5s;
+            max-width: 800px;
+            box-shadow: 0 0 90px rgba(255, 255, 255, 0.5);
+        }
+
+        .grid-item img:hover {
+            transform: scale(1.15); /* Increased zoom effect */
+        }
+
+
+
+        button{
+            border-radius: 100px;
+            background-color: green;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            max-width: 600px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+        .cart-items {
+                margin-top: 20px;      
+        }
+        .cart-item {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color:black;
+        }
+        .cart-item button {
+            margin-left: 10px;
+        }
+        .checkout-form {
+                margin-top: 20px;
+            }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 500px;
+            width: 100%;
+        }
+        #cartStatus {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .icons{
+            padding: 50px;
+          
+        }
+        
+    </style>
+    <body>
+        <div class="ndiv">
+            <h1 font-size="60px" font-align="center" font-family="Gill Sans", "Gill Sans MT","Calibri", "Trebuchet MS", sans-serif> 
+                <u> VEGGIES FORK </u> 
+            </h1>
+            <h3>Your belly knows best</h3><br><br>  
+       
+            <a href="Home.html" class="icons">
+                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
+                    <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1"/>
+                  </svg>   
+            </a>  
+
+                <a href="Home.html" class="icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-house-fill" viewBox="0 0 16 16">
+                        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                        <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                    </svg>   
+                </a>
+
+                   
+
+                <a href="Order.html" class="icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                        <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1"/>
+                      </svg>
+                </a>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="https://vismaifood.com/storage/app/uploads/public/609/3dc/1d7/6093dc1d77053892307086.jpg" width="150" height="150" alt="Masala Dosa">
+                <h4>Masala Dosa<br> Rs.50/-</h4>
+                <button onclick="addToCart('Masala Dosa', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.hAAirlMomjoqVIxl-K_sjQHaEr&pid=Api&P=0&h=180" width="150" height="150" alt="Paddu">
+                <h4>Paddu<br> Rs.50/-</h4>
+                <button onclick="addToCart('Paddu', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="https://img.freepik.com/premium-photo/idli-vada-with-sambar-pr-sambhar-also-called-medu-wada-rice-cake_466689-78707.jpg?w=826" width="150" height="150" alt="Idli Vadda">
+                <h4>Idli Vadda<br> Rs.50/-</h4>
+                <button onclick="addToCart('Idli Vadda', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="https://www.cukzy.com/wp-content/uploads/Bisi-Bele-Bath-2.jpg" width="150" height="150" alt="Bisi bele bath">
+                <h4>Bisi-bele Bath<br> Rs.50/-</h4>
+                <button onclick="addToCart('Bisi-bele Bath', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="https://i1.wp.com/www.theculinarypeace.com/wp-content/uploads/2018/02/temp-16.png?fit=1280%2C1600&ssl=1" width="150" height="150" alt="Tomato bath">
+                <h4>Tomato Bath <br>Rs.50/-</h4>
+                <button onclick="addToCart('Tomato Bath', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="https://i2.wp.com/i.ytimg.com/vi/otZtfjlGC4I/maxresdefault.jpg" width="150" height="150" alt="Vangi Bath">
+                <h4>Vangi Bath<br> Rs.50/-</h4>
+                <button onclick="addToCart('Vangi Bath', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="http://www.archanaskitchen.com/images/archanaskitchen/0-Archanas-Kitchen-Recipes/Puliyodharai_Recipe-0973.jpg" width="150" height="150" alt="Puliyogare">
+                <h4>Puliyogare<br> Rs.50/-</h4>
+                <button onclick="addToCart('Puliyogare', 50)">Add</button>
+            </div>
+
+
+            <div class="grid-item">
+                <img src="https://madhurasrecipe.com/wp-content/uploads/2020/10/Aloo-Kurma-Puri-Marathi-Recipe-post-585x398.jpg" width="150" height="150" alt="">
+                <h4>Puri & Kurma<br> Rs.50/-</h4>
+                <button onclick="addToCart('Puri & Kurma', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="https://d36v5spmfzyapc.cloudfront.net/wp-content/uploads/2021/11/paneer-butter-masala-3.jpg" width="150" height="150" alt="">
+                <h4>Paneer Kaju Masala <br>Rs.50/-</h4>
+                <button onclick="addToCart('Paneer Kaju Masala', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="https://i.ytimg.com/vi/ExRfzD4h1ak/maxresdefault.jpg" width="150" height="150" alt=" ">
+                <h4>Kaju Masala <br>Rs.50/-</h4>
+                <button onclick="addToCart('Kaju Masala ', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="https://greenbowl2soul.com/wp-content/uploads/2019/02/Easy-palak-paneer-recipe-1.jpg" width="150" height="150" alt="">
+                <h4>Palak Paneer<br> Rs.50/-</h4>
+                <button onclick="addToCart('Palak Paneer', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/12/jeera-rice-recipe.jpg     " width="150" height="150" alt=" ">
+                <h4>Jeera Rice<br> Rs.50/-</h4>
+                <button onclick="addToCart('Jeera Rice ', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="https://images.squarespace-cdn.com/content/v1/612d4825ee7c3b7ba3e215b7/1630666547049-QNR18XNLR2C6AZKEIVYV/shutterstock_151082951.png" width="150" height="150" alt=" ">
+                <h4>Tandoori Roti<br> Rs.50/-</h4>
+                <button onclick="addToCart(' Tandoori Roti', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2016/10/chow-chow-bhath-recipe-1a.jpg" width="150" height="150" alt="">
+                <h4>Chou-Chou Bath<br> Rs.50/-</h4>
+                <button onclick="addToCart('Chou-Chou Bath', 50)">Add</button>
+            </div>
+            
+
+            <div class="grid-item">
+                <img src="https://simmertoslimmer.com/wp-content/uploads/2023/02/Palak-Paratha.jpg" 
+                width="150" height="150" alt=" ">
+                <h4>Palak-Paratha<br>  Rs.50/-</h4>
+                <button onclick="addToCart('Palak-Paratha ', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="https://www.spicemountain.co.uk/wp-content/uploads/2020/05/Palak_and_Paneer_Stuffed_Paratha_Recipe-1022.jpg" width="150" height="150" alt="">
+                <h4>Alu-Paratha<br>Rs.50/-</h4>
+                <button onclick="addToCart('Alu-Paratha', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="https://yummyindiankitchen.com/wp-content/uploads/2018/01/quick-vegetable-biryani-veg-biryani-in-cooker-pressure-cooker-biryani-easy-biryani-1024x683.jpg" width="150" height="150" alt=" ">
+                <h4>Veg-Biryani<br> Rs.50/-</h4>
+                <button onclick="addToCart(' Veg-Biryani', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="https://www.nandanmsd.com/wp-content/uploads/2020/08/Hong-Kong-Fried-Rice.jpg" width="150" height="150" alt="">
+                <h4>Fried Rice <br>Rs.50/-</h4>
+                <button onclick="addToCart('Fried Rice', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="http://www.archanaskitchen.com/images/archanaskitchen/1-Author/Roop/curd_rice_with_mint_flavour_recipe.jpg" width="150" height="150" alt="">
+                <h4>Curd Rice<br> Rs.50/-</h4>
+                <button onclick="addToCart('Curd Rice', 50)">Add</button>
+            </div>
+            <div class="grid-item">
+                <img src="https://www.faskitchen.com/wp-content/uploads/2015/04/potato-cutlet.jpg" width="150" height="150" alt="">
+                <h4>Alu Tiki <br>Rs.50/-</h4>
+                <button onclick="addToCart('Alu Tiki', 50)">Add</button>
+            </div>
+           
+    
+        </div>
+
+        <div id="cartStatus">
+            <span id="cartItemCount">0</span> Food Items Added - Total: Rs.<span id="cartTotalPrice">0</span>
+            <button onclick="openCart()">View Cart</button>
+        </div>
+    
+        <div id="cartModal" class="modal">
+            <div class="modal-content">
+                <h2>Selected Foods</h2>
+                <ul id="cartList"></ul>
+                <p>Total: Rs.<span id="totalPrice">0</span></p>
+                <button onclick="clearCart()">Clear Cart</button>
+                <button onclick="closeCart()">Close</button>
+                <button onclick="openOrder()">Order</button>   
+            </div>
+        </div>
+    
+        
+
+    <script>
+        /*
+        document.addEventListener('DOMContentLoaded', function() {
+        const isSignedIn = localStorage.getItem('isSignedIn');
+        if (!isSignedIn) {
+            alert("Please sign in to view the menu.");
+            location.href = "SignIn.html"; // Redirect to sign-in page
+        }
+    }); */
+
+
+
+
+
+    // Function to clear the cart
+    function clearCartOnLoad() {
+        cart = [];
+        localStorage.removeItem('cart');
+        renderCart();
+        showCartStatus();
+    }
+
+    function openOrder() {
+        location.href = "Order.html";
+    }
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function addToCart(name, price) {
+        const existingItemIndex = cart.findIndex(item => item.name === name);
+
+        if (existingItemIndex > -1) {
+            cart[existingItemIndex].quantity++;
+        } else {
+            cart.push({ name, price, quantity: 1 });
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        showCartStatus();
+        renderCart();
+    }
+
+    function renderCart() {
+        const cartList = document.getElementById('cartList');
+        const totalPriceElement = document.getElementById('totalPrice');
+        const cartItemCount = document.getElementById('cartItemCount');
+        const cartTotalPrice = document.getElementById('cartTotalPrice');
+
+        cartList.innerHTML = '';
+        let total = 0;
+        let itemCount = 0;
+
+        cart.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.className = 'cart-item';
+            li.innerHTML = `
+                ${item.name} - Rs${item.price} x ${item.quantity} 
+                <button onclick="removeFromCart(${index})">Remove</button>
+                <button onclick="updateQuantity(${index}, 1)">+</button>
+                <button onclick="updateQuantity(${index}, -1)">-</button>
+            `;
+            cartList.appendChild(li);
+            total += item.price * item.quantity;
+            itemCount += item.quantity;
+        });
+
+        totalPriceElement.textContent = total;
+        cartItemCount.textContent = itemCount;
+        cartTotalPrice.textContent = total;
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+        showCartStatus();
+    }
+
+    function updateQuantity(index, change) {
+        cart[index].quantity += change;
+        if (cart[index].quantity <= 0) {
+            removeFromCart(index);
+        } else {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+            showCartStatus();
+        }
+    }
+
+    function clearCart() {
+        cart = [];
+        localStorage.removeItem('cart');
+        renderCart();
+        closeCart();
+        showCartStatus();
+    }
+
+    function showCartStatus() {
+        const cartStatus = document.getElementById('cartStatus');
+        const itemCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+        cartStatus.style.display = itemCount > 0 ? 'block' : 'none';
+    }
+
+    function openCart() {
+        const cartModal = document.getElementById('cartModal');
+        cartModal.style.display = 'flex';
+        renderCart();
+    }
+
+    function closeCart() {
+        const cartModal = document.getElementById('cartModal');
+        cartModal.style.display = 'none';
+    }
+
+    document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+
+        if (cart.length === 0) {
+            alert('Your cart is empty.');
+            return;
+        }
+
+        if (!name || !email) {
+            alert('Please fill in all fields.');
+            return;
+        }
+    });
+
+    // Clear the cart when the page loads
+    clearCartOnLoad();
+ 
+    </script>        
+
+                
+
+        
+</body>
+</html>
